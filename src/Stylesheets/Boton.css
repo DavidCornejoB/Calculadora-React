@@ -1,5 +1,5 @@
 .boton-contenedor {
-    height: 38px;
+    height: 48px;
     display: flex;
     flex: 1 1;
     justify-content: center;
@@ -15,7 +15,16 @@
     user-select: none;
 }
 
+.boton-contenedor:hover {
+    background-color: rgb(223, 255, 244);
+}
+
 .operador {
     background-color: aqua;
+
+}
+
+.operador:hover {
+    background-color: rgb(213, 255, 255);
 
 }

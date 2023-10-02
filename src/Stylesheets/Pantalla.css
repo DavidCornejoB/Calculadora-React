@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
+.input {
+    height: 75px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: self-end;
+    font-family: 'VT323';
+    font-weight: bold;
+    font-size: xx-large;
+    background-color: black;
+    color: greenyellow;
+    padding: 11px 30px 11px 11px;
+    margin: 1px solid #888;
+    box-shadow: -1px 4px 1px 1px rgb(92, 92, 92);
+}
+
+.mini-input {
+    justify-content: flex-start;
+    font-size: small;
+
+}
