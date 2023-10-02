@@ -98,9 +98,7 @@ function App() {
         <div className='fila'>
           <BotonClear handleClick={clearInput}>Clear</BotonClear>
         </div>
-
       </div>
-
     </div>
   );
 }
