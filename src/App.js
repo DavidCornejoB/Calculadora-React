@@ -16,10 +16,11 @@ function App() {
    * @param {*} valor CORRESPONDE A LOS CARACTERES DIGITADOS POR EL USUARIO
    * MÉTODO PARA AGREGAR VALORES A LA PANTALLA
    */
+
   const agregarInput = valor => {
     try {
       // SI EL VALOR EN PANTALLA ES 0 O 'CLEAR PLEASE', BORRAMOS TODO EL VALOR Y LO REEMPLAZAMOS POR LO DIGITADO POR EL USUARIO
-      if (input === '0' || input === 'CLEAR PLEASE') {
+      if (input === '0' || input === 'CLEAR PLEASE!') {
         setInput(valor);
       } else { // SINO, VAMOS CONCATENANDO LOS VALORES INGRESADOS POR EL USUARIO EN EL IMPUT:
 
@@ -33,7 +34,8 @@ function App() {
       }
     } catch (error) {
       // EN CASO DE QUE EL RESULTADO DE LA OPERACIÓN NO SE HAYA BORRADO, SE PEDIRÁ LIMPIAR PANTALLA PARA EVITAR ERROR.
-      setInput('CLEAR PLEASE');
+      setInput('CLEAR PLEASE!');
+      setmemory("");
     }
   };
 
@@ -53,13 +55,19 @@ function App() {
      * EN CASO DE QUE SE QUIERA CALCULAR EL RESULTADO, SIENDO QUE EL ULTIMO CARACTER DEL INPUT ES UN OPERADOR, SE ELIMINA DICHO OPERADOR
      * Y SE CALCULA EL RESULTADO:
      */
-    if (input.slice(-1) === "+" || input.slice(-1) === "-" || input.slice(-1) === "*" || input.slice(-1) === "/") {
-      setInput(evaluate(memory.concat(input.slice(0, input.length - 1))));
-      setmemory(memory.concat(input.slice(0, input.length - 1)));
-    } else { // SIMPLEMENTE SE CALCULA EL RESULTADO:
-      setInput(evaluate(memory.concat(input))); //EL MÉTODO evaluate() RECIBE UNA CADENA DE CARACTERES QUE CORRESPONDE A UNA OP MATEMÁTICA, Y LA CALCULA
-      setmemory(memory.concat(input));
+    try {
+      if (input.slice(-1) === "+" || input.slice(-1) === "-" || input.slice(-1) === "*" || input.slice(-1) === "/") {
+        setInput(evaluate(memory.concat(input.slice(0, input.length - 1))));
+        setmemory(memory.concat(input.slice(0, input.length - 1)));
+      } else { // SIMPLEMENTE SE CALCULA EL RESULTADO:
+        setInput(evaluate(memory.concat(input))); //EL MÉTODO evaluate() RECIBE UNA CADENA DE CARACTERES QUE CORRESPONDE A UNA OP MATEMÁTICA, Y LA CALCULA
+        setmemory(memory.concat(input));
+      }
+    } catch (error) {
+      // EN CASO DE QUE EL RESULTADO DE LA OPERACIÓN NO SE HAYA BORRADO, SE PEDIRÁ LIMPIAR PANTALLA PARA EVITAR ERROR.
+      setInput(input);
     }
+
   };
 
   return (
