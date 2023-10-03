@@ -1,3 +1,18 @@
+# Calculadora de operaciones básicas en React
+
+Aplicación sencilla para aprender conceptos básicos de React: creación de componentes, comunicación entre componentes, uso de hooks, etc.
+
+Para una mejor explicación del código y funcionamiento, [Visita el siguiente video](https://youtu.be/StqWhiZ3lEE)
+
+---
+
+### TODO:
+
+- Poder cambiar de calculadora básica a calculadora científica.
+- Retroceder a operaciones anteriores.
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
